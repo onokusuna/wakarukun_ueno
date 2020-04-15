@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 2020_04_15_091916) do
   create_table "exhibitions", force: :cascade do |t|
     t.string "name", null: false
     t.string "place", null: false
-    t.date "start"
-    t.date "end"
+    t.date "start", null: false
+    t.date "end", null: false
     t.string "image", null: false
     t.string "status", default: "To Be", null: false
     t.datetime "created_at", null: false
