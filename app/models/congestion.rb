@@ -1,0 +1,3 @@
+class Congestion < ApplicationRecord
+  belongs_to :user
+end
