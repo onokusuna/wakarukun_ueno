@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WakarukunUeno</title>
+    <meta charset="UTF-8">
+    <title>わかるくん - リアルタイム投稿アプリ〜これで上野の美術館・博物館の混雑度がわかる〜</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,34 @@
   </head>
 
   <body>
+    <!-- ヘッダー -->
+    <header class="header">
+      <div class="container header_appContainer">
+        <div class="row header_appRow">
+          <nav class="header_nav">
+            <span class="header_nav-logo">Wakarukun</span>
+            <ul class="header_nav-navList">
+              <!-- ログイン条件分岐 -->
+              <% if user_signed_in? %>
+                <li class="header_nav-about"><%= link_to 'About', homes_about_path %></li>
+                <li class="header_nav-exhibitons"><%= link_to 'Exhibitions', exhibitons_path %></li>
+                <li class="header_nav-mypage"><%= link_to 'My page', user_path(current_user) %></li>
+                <li class="header_nav-logout"><%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
+              <% else  %>
+                <li class="header_nav-about"><%= link_to 'About', homes_about_path %></li>
+                <li class="header_nav-login"><%= link_to 'Log in', new_user_session_path %></li>
+                <li class="header_nav-signup"><%= link_to 'Sign up',new_user_registration_path %></li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="appSection">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </section>
     <%= yield %>
+    <footer class="footer">&copy;copyright student</footer>
   </body>
 </html>
