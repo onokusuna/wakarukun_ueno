@@ -13,5 +13,5 @@ Rails.application.routes.draw do
       get 'users/thanks'
     end
   end
-  resources :exhibitons, only: [:index, :show]
+  resources :exhibitions, only: [:index, :show]
 end

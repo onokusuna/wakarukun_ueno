@@ -12,33 +12,37 @@
 
   <body>
     <!-- ヘッダー -->
-    <header class="header">
-      <div class="container header_appContainer">
-        <div class="row header_appRow">
-          <nav class="header_nav">
-            <span class="header_nav-logo">Wakarukun</span>
-            <ul class="header_nav-navList">
-              <!-- ログイン条件分岐 -->
-              <% if user_signed_in? %>
-                <li class="header_nav-about"><%= link_to 'About', homes_about_path %></li>
-                <li class="header_nav-exhibitons"><%= link_to 'Exhibitions', exhibitons_path %></li>
-                <li class="header_nav-mypage"><%= link_to 'My page', user_path(current_user) %></li>
-                <li class="header_nav-logout"><%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
-              <% else  %>
-                <li class="header_nav-about"><%= link_to 'About', homes_about_path %></li>
-                <li class="header_nav-login"><%= link_to 'Log in', new_user_session_path %></li>
-                <li class="header_nav-signup"><%= link_to 'Sign up',new_user_registration_path %></li>
-              <% end %>
-            </ul>
-          </nav>
-        </div>
-      </div>
+    <header class="appHeader">
+      <nav class="appHeader_nav">
+        <span class="appHeader_nav-logo"><%= link_to 'Wakarukun', root_path %></span>
+        <ul class="appHeader_nav-navList">
+          <!-- ログイン条件分岐 -->
+          <% if user_signed_in? %>
+            <li class="appHeader_nav-about"><%= link_to 'About', homes_about_path %></li>
+            <li class="appHeader_nav-exhibitions"><%= link_to 'Exhibitions', exhibitions_path %></li>
+            <li class="appHeader_nav-mypage"><%= link_to 'My page', user_path(current_user) %></li>
+            <li class="appHeader_nav-logout"><%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
+          <% else  %>
+            <li class="appHeader_nav-about"><%= link_to 'About', homes_about_path %></li>
+            <li class="appHeader_nav-login"><%= link_to 'Log in', new_user_session_path %></li>
+            <li class="appHeader_nav-signup"><%= link_to 'Sign up',new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </nav>
     </header>
-    <section class="appSection">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </section>
-    <%= yield %>
-    <footer class="footer">&copy;copyright student</footer>
+    <!-- メイン -->
+    <main class="appMain">
+      <div class="container appMain_container">
+        <section class="appSection">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+      </section>
+      <%= yield %>
+      <div class="row appHeader_row">
+      </div>
+      </div>
+    </main>
+    <!-- フッター -->
+    <footer class="appFooter">&copy;copyright student</footer>
   </body>
 </html>
