@@ -9,6 +9,6 @@ class ExhibitionsController < ApplicationController
 
   private
   def exhibition_params
-    params.require(:exhibition).permit(:name, :place, :start, :end, :image, :status)
+    params.require(:exhibition).permit(:name, :place, :start, :end, :image, :description, :summary, :status)
   end
 end

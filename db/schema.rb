@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_04_15_091916) do
     t.date "start", null: false
     t.date "end", null: false
     t.string "image", null: false
+    t.text "description", null: false
+    t.text "summary", null: false
     t.string "status", default: "To Be", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

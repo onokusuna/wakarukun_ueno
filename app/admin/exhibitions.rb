@@ -3,7 +3,7 @@ ActiveAdmin.register Exhibition do
 
   config.batch_actions = false
 
-  permit_params :name, :place, :start, :end, :image, :status
+  permit_params :name, :place, :start, :end, :image, :description, :summary, :status
 
   index do
     selectable_column
@@ -30,6 +30,8 @@ ActiveAdmin.register Exhibition do
 	    f.input :start
 	    f.input :end
 	    f.input :image, :as => :file
+      f.input :description
+      f.input :summary
 	    f.input :status, as: :select, collection: ['To Be','Now','Past']
 	  end
 	  f.actions
@@ -45,6 +47,8 @@ ActiveAdmin.register Exhibition do
         row :image do
           image_tag(exhibition.image.url)
         end
+        row :description
+        row :summary
         row :status
       end
     end
