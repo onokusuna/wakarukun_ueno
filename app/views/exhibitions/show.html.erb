@@ -1,2 +1,7 @@
-<h1><%= @exhibition.name %></h1>
-<p><%= @exhibition.place %></p>
+<div class="exhibitionShowRow">
+  <h1><%= @exhibition.name %></h1>
+  <span><%= @exhibition.place %></span><br>
+  <span class="exhibitionShowRow-start">開催期間：<%= @exhibition.start %> 〜 </span>
+  <span class="exhibitionShowRow-end"><%= @exhibition.end %></span><br>
+  <%= image_tag @exhibition.image.to_s %>
+</div>
