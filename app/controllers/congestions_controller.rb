@@ -1,0 +1,2 @@
+class CongestionsController < ApplicationController
+end
