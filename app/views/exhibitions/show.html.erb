@@ -4,4 +4,8 @@
   <span class="exhibitionShowRow-start">開催期間：<%= @exhibition.start %> 〜 </span>
   <span class="exhibitionShowRow-end"><%= @exhibition.end %></span><br>
   <%= image_tag @exhibition.image.to_s %>
+  <p class="exhibitionShowRow-description_head">この展覧会について</p>
+  <p class="exhibitionShowRow-description_body"><%= @exhibition.description %></p>
+  <p class="exhibitionShowRow-summary_head">開催概要</p>
+  <p class="exhibitionShowRow-summary_body"><%= @exhibition.summary %></p>
 </div>
