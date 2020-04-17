@@ -2,16 +2,14 @@
 <p>※混雑度は1時間の実況数</p>
 
 <!-- 展覧会一覧表示部分 -->
-<!-- <div class="flex-row exhibitionRow-upper"> -->
 <div class="row exhibitionIndexRow">
 <% @exhibitions.each do |exhibition| %>
   <% if "Now" == exhibition.status %>
   <!-- 開催中のみ表示 -->
-	  <div class="col-xs-3 col-xs-offset-1 exhibitionIndexRow_col">
-		<%= link_to exhibition.name, exhibition_path(exhibition), class: "exhibitionIndexRow_col-name" %><br>
-		<span class="exhibitionIndexRow_col-place"><%= exhibition.place %></span><br>
-		<span class="exhibitionIndexRow_col-start">開催期間：<%= exhibition.start %> 〜 </span>
-		<span class="exhibitionIndexRow_col-end"><%= exhibition.end %></span><br>
+    <ul class="col-lg-3 offset-lg-1 exhibitionIndexRow_col">
+		<li class=""><%= link_to exhibition.name, exhibition_path(exhibition), class: "exhibitionIndexRow_col-name" %></li>
+		<li class="exhibitionIndexRow_col-place"><%= exhibition.place %></li>
+		<li class="exhibitionIndexRow_col-period">開催期間：<br><%= exhibition.start %> 〜 <%= exhibition.end %></li>
 		<%= link_to (exhibition) do %>
 		  <%= image_tag exhibition.image.to_s %><br>
 		<% end %>
@@ -26,6 +24,7 @@
 		<%# else %>
 		<%# end %>
 	  </div>
+	</ul>
   <% end %>
 <% end %>
 </div>
