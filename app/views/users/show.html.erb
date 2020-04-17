@@ -1,5 +1,32 @@
-<h1>マイページ</h1>
-<h3>登録情報</h3>
-<ul class="pagination">
-  
-</ul>
+<!-- ヘディング -->
+<h2>マイページ</h2>
+<!-- メイン1 -->
+<h4>登録情報</h4>
+<div class="row userShowRow-info">
+  <div class="col-lg-1 offset-lg-4 userShowRow-info_ArticleCol-name">名前</div>
+  <div class="col-lg-3 userShowRow-info_ContentCol-name"><%= current_user.name %></div>
+  <div class="col-lg-1 offset-lg-4 userShowRow-info_ArticleCol-email">メール<br>アドレス</div>
+  <div class="col-lg-3 userShowRow-info_ContentCol-email"><%= current_user.email %></div>
+  <div class="col-lg-1 offset-lg-8 btn btn-primary userShowRow-info_linkCol-edit"><%= link_to "編集", edit_user_path(current_user) %></div>
+  <span class="userShowRow-info-leave"><%= link_to "退会する", users_leave_users_path(current_user) %></span>
+</div>
+<!-- メイン2 -->
+<h4>クリップした展覧会</h4>
+<div class="row userShowRow-clip">
+  <table class="table col-lg-10 offset-lg-1 userShowRow-clip_tableCol">
+  	<thead class="thead-dark userShowRow-clip_tableCol_thead">
+  	  <tr>
+  		<th>会場</th>
+  		<th>展覧会名</th>
+  		<th>開催期間</th>
+  	  </tr>
+  	</thead>
+  	<tbody>
+  	  <%# current_user.clips.each do |clip| %>
+  	    <tr>
+  	      <td><%# clip.place %>東京が立てた美術館</td>
+  	      <td><%# clip.name %>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</td>
+  	      <td><%# clip.start %>2020-04-01 〜 2020-04-01<%# clip.end %></td>
+  	  <%# end %>
+  	</tbody>
+  </table>
