@@ -12,15 +12,19 @@
 		<span class="exhibitionIndexRow_col-place"><%= exhibition.place %></span><br>
 		<span class="exhibitionIndexRow_col-start">開催期間：<%= exhibition.start %> 〜 </span>
 		<span class="exhibitionIndexRow_col-end"><%= exhibition.end %></span><br>
+		<%= link_to (exhibition) do %>
+		  <%= image_tag exhibition.image.to_s %><br>
+		<% end %>
 		<!-- 混雑度投稿で同じユーザーが投稿していないか確認 -->
 		<%# if exhibition.congested_by?(current_user) %>
-		  <button class="exhibitionIndexRow_col-highButton btn btn-default" disabled="disabled">混んでる<br>
+		  <button class="exhibitionIndexRow_col-highButton btn btn-secondary" disabled="disabled">　混んでる　<br>
 		  	<%= exhibition.congestions.group(:high).count %>人</button>
+		  <button class="exhibitionIndexRow_col-mddleButton btn btn-secondary" disabled="disabled">やや混んでる<br>
+		  	<%= exhibition.congestions.group(:middle).count %>人</button>
+		  <button class="exhibitionIndexRow_col-lowButton btn btn-secondary" disabled="disabled">　空いてる　<br>
+		  	<%= exhibition.congestions.group(:low).count %>人</button>
 		<%# else %>
 		<%# end %>
-		<%= link_to (exhibition) do %>
-		  <%= image_tag exhibition.image.to_s %>
-		<% end %>
 	  </div>
   <% end %>
 <% end %>
