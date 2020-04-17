@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     collection do
       get 'users/leave'
       patch 'users/active_leave'
-      get 'users/thanks'
     end
   end
   resources :exhibitions, only: [:index, :show] do

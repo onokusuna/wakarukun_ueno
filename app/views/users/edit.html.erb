@@ -5,9 +5,9 @@
 <div class="row userEditRow">
   <%= form_for(current_user) do |f| %>
     <div class="col-lg-1 offset-lg-4 userEditRow_ArticleCol-name">名前</div>
-    <%= f.text_field :name, class: "col-lg-3 userEditRow_ContentCol-name" %></div>
+    <%= f.text_field :name, class: "col-lg-3 userEditRow_contentCol-name" %></div>
     <div class="col-lg-1 offset-lg-4 userEditRow_ArticleCol-email">メール<br>アドレス</div>
-    <%= f.text_field :email, class: "col-lg-3 userEditRow_ContentCol-email" %></div>
+    <%= f.text_field :email, class: "col-lg-3 userEditRow_contentCol-email" %></div>
     <%= f.submit '保存', class: "col-lg-1 offset-lg-8 btn btn-primary userEditRow-submit" %>
   <% end %>
 </div>

@@ -1,2 +1,7 @@
-<h1>Users#leave</h1>
-<p>Find me in app/views/users/leave.html.erb</p>
+<!-- 確認文 -->
+  <h2 class="userLeave-heading">本当に退会しますか？</h2>
+<!-- 選択ボタン -->
+<div class="row userLeaveRow-choice">
+  <%= link_to "続ける", user_path(current_user), class: "col-lg-1 offset-lg-4 btn btn-primary userLeaveRow-choice_col-continue" %>
+  <%= link_to "退会する", users_active_leave_users_path, class: "col-lg-1 offset-lg-2 btn btn-danger userLeaveRow-choice_col-withdrawal", method: :patch %>
+</div>

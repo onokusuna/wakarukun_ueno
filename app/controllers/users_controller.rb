@@ -13,10 +13,15 @@ class UsersController < ApplicationController
   	end
   end
 
-  def leave
-  end
-
-  def thanks
+  def active_leave
+    if current_user.update(status: "Deleted")
+      reset_session
+      flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+      redirect_to root_path
+    else
+      flash[:notice] = "退会に失敗しました。"
+      redirect_to user_path(current_user)
+    end
   end
 
   private
