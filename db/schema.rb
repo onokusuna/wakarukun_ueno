@@ -48,9 +48,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_091916) do
   create_table "congestions", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "exhibition_id", null: false
-    t.integer "high", null: false
-    t.integer "middle", null: false
-    t.integer "low", null: false
+    t.string "condition", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,7 +1,13 @@
 class CongestionsController < ApplicationController
   def create
+    exhibition = Exhibition.find(params[:exhibition_id])
+  	congestion = current_user.congestion.new(congestion_params)
+    congestion.save
+  	redirect_back(fallback_location: root_path)
   end
 
-  def destroy
+  private
+  def congestion_params
+  	params.require(:condition).permit(:user_id, :exhibition_id, :condition)
   end
 end

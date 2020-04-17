@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     end
   end
   resources :exhibitions, only: [:index, :show] do
-    resources :congestions, only: [:create, :destroy]
+    resources :congestions, only: [:create]
   end
 end
