@@ -7,7 +7,7 @@
   <div class="col-lg-3 userShowRow-info_ContentCol-name"><%= current_user.name %></div>
   <div class="col-lg-1 offset-lg-4 userShowRow-info_ArticleCol-email">メール<br>アドレス</div>
   <div class="col-lg-3 userShowRow-info_ContentCol-email"><%= current_user.email %></div>
-  <div class="col-lg-1 offset-lg-8 btn btn-primary userShowRow-info_linkCol-edit"><%= link_to "編集", edit_user_path(current_user) %></div>
+  <div class="col-lg-1 offset-lg-8 btn btn-primary userShowRow-info_linkCol-edit"><%= link_to "変更", edit_user_path(current_user) %></div>
   <span class="userShowRow-info-leave"><%= link_to "退会する", users_leave_users_path(current_user) %></span>
 </div>
 <!-- メイン2 -->
