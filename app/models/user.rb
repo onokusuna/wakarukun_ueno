@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :congestions, :dependent => :destroy
-  has_many :clips, :dependent => :destroy
+  has_many :congestions
+  has_many :clips, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
   validates :email, presence: true, uniqueness: true
