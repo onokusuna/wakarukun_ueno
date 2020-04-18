@@ -14,9 +14,9 @@
 
   <body>
     <!-- ヘッダー -->
-    <header class="appHeader">
-      <nav class="appHeader_nav">
-        <span class="appHeader_nav-logo"><%= link_to 'Wakarukun', root_path %></span>
+    <header class="container appHeader">
+      <nav class="row appHeader_nav">
+        <span class="col-lg-1 appHeaderRow_nav-logo"><%= link_to 'Wakarukun', root_path %></span>
         <ul class="appHeader_nav-navList">
           <!-- ログイン条件分岐 -->
           <% if user_signed_in? %>
@@ -37,7 +37,6 @@
         <section class="appSection">
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
-          <%= flash[:notice] %>
         </section>
       <%= yield %>
       </div>

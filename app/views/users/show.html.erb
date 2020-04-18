@@ -1,7 +1,7 @@
 <!-- ヘディング -->
-<h2>マイページ</h2>
+<h2 class="userShowHeading">マイページ</h2>
 <!-- メイン1 -->
-<h4>登録情報</h4>
+<h4 class="userShow-info-heading">登録情報</h4>
 <div class="row userShowRow-info">
   <div class="col-lg-1 offset-lg-4 userShowRow-info_ArticleCol-name">名前</div>
   <div class="col-lg-3 userShowRow-info_ContentCol-name"><%= current_user.name %></div>
@@ -11,7 +11,7 @@
   <span class="userShowRow-info-leave"><%= link_to "退会する", users_leave_users_path(current_user) %></span>
 </div>
 <!-- メイン2 -->
-<h4>クリップした展覧会</h4>
+<h4 class="userShow-clip-heading">クリップした展覧会</h4>
 <div class="row userShowRow-clip">
   <table class="table col-lg-10 offset-lg-1 userShowRow-clip_tableCol">
   	<thead class="thead-dark userShowRow-clip_tableCol_thead">
@@ -22,11 +22,15 @@
   	  </tr>
   	</thead>
   	<tbody>
-  	  <%# current_user.clips.each do |clip| %>
-  	    <tr>
-  	      <td><%# clip.place %>東京が立てた美術館</td>
-  	      <td><%# clip.name %>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</td>
-  	      <td><%# clip.start %>2020-04-01 〜 2020-04-01<%# clip.end %></td>
-  	  <%# end %>
+        <tr>
+          <td>東京が立てた美術館</td>
+          <td>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</td>
+          <td>2020-04-01 〜 2020-04-01</td>
+        <tr>
+  	  <% current_user.clips.each do |clip| %>
+  	      <td><%= clip.place %></td>
+  	      <td><%= clip.name %></td>
+  	      <td><%= clip.start %> 〜 <%= clip.end %></td>
+  	  <% end %>
   	</tbody>
   </table>

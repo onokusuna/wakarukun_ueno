@@ -10,19 +10,15 @@
     <ul class="col-lg-3 offset-lg-1 exhibitionIndexRow_col">
 		<li class=""><%= link_to exhibition.name, exhibition_path(exhibition), class: "exhibitionIndexRow_col-name" %>
 		  <!-- クリップ未・済の分岐 -->
-		  <% if @exhibition.clipped_by?(user) %>
-  		    <li>
-   		      <%= link_to exhibition_clips_path(@exhibition), method: :delete do %>
+		  <%# if @exhibition.clipped_by?(current_user) %>
+   		      <%= link_to exhibition_clips_path(exhibition), method: :post do %>
       	        <i class="fas fa-paperclip"></i>
               <% end %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to exhibition_clips_path(@exhibition), method: :post do %>
+          <%# else %>
+              <%= link_to exhibition_clips_path(exhibition), method: :delete do %>
                 <i class="fas fa-clipboard-check"></i>
               <% end %>
-            </li>
-          <% end %>
+          <%# end %>
         </li>
 		<li class="exhibitionIndexRow_col-place"><%= exhibition.place %></li>
 		<li class="exhibitionIndexRow_col-period">開催期間：<br><%= exhibition.start %> 〜 <%= exhibition.end %></li>

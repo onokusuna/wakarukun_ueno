@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
   end
   resources :exhibitions, only: [:index, :show] do
-    resources :congestions, only: [:create]
+    resource :congestions, only: [:create]
+    resource :clips, only: [:create, :destroy]
   end
 end

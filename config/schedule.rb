@@ -1,5 +1,5 @@
 every 1.hour do # 1時間おきに実行
-  runner: "Congestion.delete_all" #モデル内のデータ全消し
+  runner "Congestion.delete_all" #モデル内のデータ全消し
 end
 
 
