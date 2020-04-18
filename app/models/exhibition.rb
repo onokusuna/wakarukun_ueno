@@ -16,4 +16,8 @@ class Exhibition < ApplicationRecord
   def congested_by?(user)
     congestions.where(user_id: user.id).exists?
   end
+
+  def clipped_by?(user)
+    clips.where(user_id: user.id).exists?
+  end
 end

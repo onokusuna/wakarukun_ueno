@@ -1,13 +1,29 @@
-<h2>開催中展覧会一覧</h2>
-<p>※混雑度は1時間の実況数</p>
+<!-- ヘディング -->
+<h2 class="exhibitionIndexHeading-heading">開催中展覧会一覧</h2>
+<p class="exhibitionIndexHeading-pragraph">※混雑度は1時間の実況数</p>
 
-<!-- 展覧会一覧表示部分 -->
+<!-- メイン -->
 <div class="row exhibitionIndexRow">
 <% @exhibitions.each do |exhibition| %>
   <% if "Now" == exhibition.status %>
   <!-- 開催中のみ表示 -->
     <ul class="col-lg-3 offset-lg-1 exhibitionIndexRow_col">
-		<li class=""><%= link_to exhibition.name, exhibition_path(exhibition), class: "exhibitionIndexRow_col-name" %></li>
+		<li class=""><%= link_to exhibition.name, exhibition_path(exhibition), class: "exhibitionIndexRow_col-name" %>
+		  <!-- クリップ未・済の分岐 -->
+		  <% if @exhibition.clipped_by?(user) %>
+  		    <li>
+   		      <%= link_to exhibition_clips_path(@exhibition), method: :delete do %>
+      	        <i class="fas fa-paperclip"></i>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to exhibition_clips_path(@exhibition), method: :post do %>
+                <i class="fas fa-clipboard-check"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </li>
 		<li class="exhibitionIndexRow_col-place"><%= exhibition.place %></li>
 		<li class="exhibitionIndexRow_col-period">開催期間：<br><%= exhibition.start %> 〜 <%= exhibition.end %></li>
 		<%= link_to (exhibition) do %>
