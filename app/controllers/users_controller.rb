@@ -7,9 +7,11 @@ class UsersController < ApplicationController
 
   def update
   	if current_user.update(user_params)
-  	   redirect_user_path(current_user)
+      flash[:notice] = "登録情報が変更されました。"
+  	  redirect_to user_path(current_user)
   	else
-  	   redirect_root_path
+      flash[:notice] = "登録情報の変更に失敗しました。"
+  	  redirect_to root_path
   	end
   end
 

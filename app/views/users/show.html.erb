@@ -28,9 +28,9 @@
           <td>2020-04-01 〜 2020-04-01</td>
         <tr>
   	  <% current_user.clips.each do |clip| %>
-  	      <td><%= clip.place %></td>
-  	      <td><%= clip.name %></td>
-  	      <td><%= clip.start %> 〜 <%= clip.end %></td>
+  	      <td><%= clip.exhibition.place %></td>
+  	      <td><%= clip.exhibition.name %></td>
+  	      <td><%= clip.exhibition.start %> 〜 <%= clip.exhibition.end %></td>
   	  <% end %>
   	</tbody>
   </table>

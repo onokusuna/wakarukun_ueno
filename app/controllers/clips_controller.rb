@@ -1,7 +1,7 @@
 class ClipsController < ApplicationController
   def create
   	exhibition = Exhibition.find(params[:exhibition_id])
-  	clip = current_user.clips.new(exhibition_id: exhibition_id)
+  	clip = current_user.clips.new(exhibition_id: exhibition.id)
     if clip.save
   	  flash[:notice] = "クリップしました。"
   	  redirect_back(fallback_location: root_path)
@@ -13,7 +13,7 @@ class ClipsController < ApplicationController
 
   def destroy
   	exhibition = Exhibition.find(params[:exhibition_id])
-  	clip = current_user.clips.find_by(exhibition_id: exhibition_id)
+  	clip = current_user.clips.find_by(exhibition_id: exhibition.id)
   	if clip.destroy
   	  flash[:notice] = "クリップを外しました。"
   	  redirect_back(fallback_location: root_path)

@@ -10,15 +10,15 @@
     <ul class="col-lg-3 offset-lg-1 exhibitionIndexRow_col">
 		<li class=""><%= link_to exhibition.name, exhibition_path(exhibition), class: "exhibitionIndexRow_col-name" %>
 		  <!-- クリップ未・済の分岐 -->
-		  <%# if @exhibition.clipped_by?(current_user) %>
-   		      <%= link_to exhibition_clips_path(exhibition), method: :post do %>
-      	        <i class="fas fa-paperclip"></i>
-              <% end %>
-          <%# else %>
-              <%= link_to exhibition_clips_path(exhibition), method: :delete do %>
+		  <% if exhibition.clipped_by?(current_user) %>
+   		      <%= link_to exhibition_clips_path(exhibition), method: :delete do %>
                 <i class="fas fa-clipboard-check"></i>
               <% end %>
-          <%# end %>
+          <% else %>
+              <%= link_to exhibition_clips_path(exhibition), method: :post do %>
+      	        <i class="fas fa-paperclip"></i>
+              <% end %>
+          <% end %>
         </li>
 		<li class="exhibitionIndexRow_col-place"><%= exhibition.place %></li>
 		<li class="exhibitionIndexRow_col-period">開催期間：<br><%= exhibition.start %> 〜 <%= exhibition.end %></li>
@@ -26,14 +26,14 @@
 		  <%= image_tag exhibition.image.to_s %><br>
 		<% end %>
 		<!-- 混雑度投稿で同じユーザーが投稿していないか確認 -->
-		<%# if exhibition.congested_by?(current_user) %>
+		<% if exhibition.congested_by?(current_user) %>
 		  <button class="exhibitionIndexRow_col-highButton btn btn-secondary" disabled="disabled">　混んでる　<br>
 		  	<%= exhibition.congestions.where(condition: "high").count %>人</button>
 		  <button class="exhibitionIndexRow_col-mddleButton btn btn-secondary" disabled="disabled">やや混んでる<br>
 		  	<%= exhibition.congestions.where(condition: "middle").count %>人</button>
 		  <button class="exhibitionIndexRow_col-lowButton btn btn-secondary" disabled="disabled">　空いてる　<br>
 		  	<%= exhibition.congestions.where(condition: "low").count %>人</button>
-		<%# else %>
+		<% else %>
 		  <%= button_to exhibition_congestions_path(exhibition), class: "exhibitionIndexRow_col-highButton btn btn-secondary", params: { condition: "high" } do %>　混んでる　<br>
 		  	<%= exhibition.congestions.where(condition: "high").count %>人</button>
 		  <% end %>
@@ -43,7 +43,7 @@
 		  <%= link_to exhibition_congestions_path(exhibition), class: "exhibitionIndexRow_col-lowButton btn btn-secondary", params: { condition: "low" } do %>　空いてる　<br>
 		  	<%= exhibition.congestions.where(condition: "low").count %>人</button>
 		  <% end %>
-		<%# end %>
+		<% end %>
 	  </div>
 	</ul>
   <% end %>
