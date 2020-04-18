@@ -14,20 +14,20 @@
 
   <body>
     <!-- ヘッダー -->
-    <header class="container appHeader">
-      <nav class="row appHeader_nav">
-        <span class="col-lg-1 appHeaderRow_nav-logo"><%= link_to 'Wakarukun', root_path %></span>
-        <ul class="appHeader_nav-navList">
+    <header class="appHeader">
+      <nav class="appHeader_nav">
+        <span class="appHeader_nav-logo"><%= link_to 'Wakarukun', root_path, class: "appHeaderA" %></span>
+        <span class="appHeader_nav-menu">
           <!-- ログイン条件分岐 -->
           <% if user_signed_in? %>
-            <li class="appHeader_nav-about"><%= link_to 'About', homes_about_path %></li>
-            <li class="appHeader_nav-exhibitions"><%= link_to 'Exhibitions', exhibitions_path %></li>
-            <li class="appHeader_nav-mypage"><%= link_to 'My page', user_path(current_user) %></li>
-            <li class="appHeader_nav-logout"><%= link_to 'Log out', destroy_user_session_path, method: :delete%></li>
-          <% else  %>
-            <li class="appHeader_nav-about"><%= link_to 'About', homes_about_path %></li>
-            <li class="appHeader_nav-login"><%= link_to 'Log in', new_user_session_path %></li>
-            <li class="appHeader_nav-signup"><%= link_to 'Sign up',new_user_registration_path %></li>
+            <span class="appHeader_nav-menu_about"><%= link_to 'About', homes_about_path, class: "appHeaderA" %></span>
+            <span class="appHeader_nav-menu_exhibitions"><%= link_to 'Exhibitions', exhibitions_path, class: "appHeaderA" %></span>
+            <span class="appHeader_nav-menu_mypage"><%= link_to 'My page', user_path(current_user), class: "appHeaderA" %></span>
+            <span class="appHeader_nav-menu_logout"><%= link_to 'Log out', destroy_user_session_path, class: "appHeaderA", method: :delete %></span>
+          <% else %>
+            <span class="appHeader_nav-menu_about"><%= link_to 'About', homes_about_path, class: "appHeaderA" %></span>
+            <span class="appHeader_nav-menu_login"><%= link_to 'Log in', new_user_session_path, class: "appHeaderA" %></span>
+            <span class="appHeader_nav-menu_signup"><%= link_to 'Sign up',new_user_registration_path, class: "appHeaderA" %></span>
           <% end %>
         </ul>
       </nav>
@@ -41,6 +41,10 @@
       <%= yield %>
       </div>
     <!-- フッター -->
-    <footer class="appFooter">&copy;copyright student</footer>
+    <footer class="container-fluid appFooter">
+      <div class="row appFooter">
+        <span class="col-lg-12 appFooter_copyright">&copy;copyright student</span>
+      </div>
+    </footer>
   </body>
 </html>
