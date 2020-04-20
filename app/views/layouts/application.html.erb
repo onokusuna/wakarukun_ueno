@@ -16,20 +16,18 @@
     <!-- ヘッダー -->
     <header class="container-fluid appHeader">
       <nav class="row appHeader_nav">
-        <span class="col-12 col-lg-1 appHeader_nav-logo"><%= link_to 'Wakarukun', root_path, class: "appHeader_link" %></span>
-        <span class="col-12 col-lg-12 appHeader_nav-menu">
+        <div class="col-lg-1 col-md appHeader_nav-logo"><%= link_to 'Wakarukun', root_path, class: "appHeader_link" %></div>
           <!-- ログイン条件分岐 -->
           <% if user_signed_in? %>
-            <span class="appHeader_nav-menu_about"><%= link_to 'About', homes_about_path, class: "appHeader_link" %></span>
-            <span class="appHeader_nav-menu_exhibitions"><%= link_to 'Exhibitions', exhibitions_path, class: "appHeader_link" %></span>
-            <span class="appHeader_nav-menu_mypage"><%= link_to 'My page', user_path(current_user), class: "appHeader_link" %></span>
-            <span class="appHeader_nav-menu_logout"><%= link_to 'Log out', destroy_user_session_path, class: "appHeader_link", method: :delete %></span>
+            <div class="col-lg-1 offset-lg-7 col-md appHeader_nav-about"><%= link_to 'About', homes_about_path, class: "appHeader_link" %></div>
+            <div class="col-lg-1 col-md appHeader_nav-exhibitions"><%= link_to 'Exhibitions', exhibitions_path, class: "appHeader_link" %></div>
+            <div class="col-lg-1 col-md appHeader_nav-mypage"><%= link_to 'Mypage', user_path(current_user), class: "appHeader_link" %></div>
+            <div class="col-lg-1 col-md appHeader_nav-logout"><%= link_to 'Logout', destroy_user_session_path, class: "appHeader_link-blue", method: :delete %></div>
           <% else %>
-            <span class="appHeader_nav-menu_about"><%= link_to 'About', homes_about_path, class: "appHeader_link" %></span>
-            <span class="appHeader_nav-menu_login"><%= link_to 'Log in', new_user_session_path, class: "appHeader_link" %></span>
-            <span class="appHeader_nav-menu_signup"><%= link_to 'Sign up',new_user_registration_path, class: "appHeader_link" %></span>
+            <div class="col-md appHeader_nav-about"><%= link_to 'About', homes_about_path, class: "appHeader_link" %></div>
+            <div class="col-md appHeader_nav-login"><%= link_to 'Log in', new_user_session_path, class: "appHeader_link" %></div>
+            <div class="col-md appHeader_nav-signup"><%= link_to 'Sign up',new_user_registration_path, class: "appHeader_link" %></div>
           <% end %>
-        </ul>
       </nav>
     </header>
     <!-- メイン -->
