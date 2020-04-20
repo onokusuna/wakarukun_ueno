@@ -29,11 +29,6 @@
     box-sizing: border-box;
   }
 
-  //ヘッダーリンクカラー白
-  .appHeaderA {
-    color: #fff;
-  }
-
   .appHeader {
 	  width: 100%;
 	  height: 3em;
@@ -52,6 +47,10 @@
       left: 1em;
       line-height: 48px;
     }
+  }
+
+  .appMain_container {
+    padding-bottom: 3em;
   }
 
   .appHeader_nav-menu {

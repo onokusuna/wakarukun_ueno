@@ -33,8 +33,9 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :name
       f.input :email
-      f.input :status
+      f.input :status, as: :select, collection: ['Active','Deleted']
     end
+    f.actions
   end
 end
   # See permitted parameters documentation:

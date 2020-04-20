@@ -1,21 +1,21 @@
 <!-- ヘディング -->
 <div class="row exhibitionIndexHeading"></div>
-<h2 class="col-lg-11 offset-lg-1 exhibitionIndexHeading_heading">開催中展覧会一覧</h2>
-  <p class="col-lg-11 offset-lg-1 exhibitionIndexHeading_pragraph">
+<h2 class="col-lg-12 exhibitionIndexHeading_heading">開催中展覧会一覧</h2>
+  <p class="col-lg-12 exhibitionIndexHeading_pragraph">
 	※混雑度は <%= Time.current.ago(1.hours).strftime("%H時%M分") %> 〜 <%= Time.current.strftime("%H時%M分") %> の実況数
   </p>
 
 <!-- メイン -->
-<div class="row exhibitionIndexMain">
+<div class="d-flex flex-wrap justify-content-around exhibitionIndexMain">
 <% @exhibitions.each do |exhibition| %>
   <% if "Now" == exhibition.status %>
   <!-- 開催中のみ表示 -->
-      <ul class="col-12 col-lg-4 exhibitionIndexMain-ul">
+      <ul class="flex-colmun exhibitionIndexMain-ul">
 		<li class="exhibitionIndexMain-ul_li-name"><%= link_to exhibition.name, exhibition_path(exhibition), class: "exhibitionIndexMain-ul_li-nameLink" %>
 		  <!-- クリップ未・済の分岐 -->
 		  <% if exhibition.clipped_by?(current_user) %>
    		      <%= link_to exhibition_clips_path(exhibition), class: "exhibitionIndexMain-ul_li-clippedLink", method: :delete do %>
-                <i class="fas fa-clipboard-check"></i>
+      	        <i class="fas fa-paperclip"></i>
               <% end %>
           <% else %>
               <%= link_to exhibition_clips_path(exhibition), class: "exhibitionIndexMain-ul_li-clipLink", method: :post do %>
@@ -23,7 +23,7 @@
               <% end %>
           <% end %>
         </li>
-		<li class="exhibitionIndexMain-ul_li-place"><%= exhibition.place %></li>
+		<li class="exhibitionIndexMain-ul_li-place">会場：<%= exhibition.place %></li>
 		<li class="exhibitionIndexMain-ul_li-period">
 			会期：<%= exhibition.start.strftime("%Y年%m月%d日") %> 〜 <%= exhibition.end.strftime("%Y年%m月%d日") %>
 		</li>
@@ -34,7 +34,7 @@
 		<!-- 混雑度投稿の未・済の分岐 -->
 		<% if exhibition.congested_by?(current_user) %>
 		  <!-- 投稿済み -->
-		  <li class="d-flex flex-row exhibitionIndexMain-ul_li-button">
+		  <li class="d-flex flex-row justify-content-around exhibitionIndexMain-ul_li-button">
 			<button class="exhibitionIndexMain-ul_li-highButton btn btn-secondary" disabled="disabled">混んでる<br>
 			  <%= exhibition.congestions.where(condition: "high").count %>人</button>
 			<button class="exhibitionIndexMain-ul_li-middleButton btn btn-secondary" disabled="disabled">やや混み<br>
@@ -44,14 +44,14 @@
 		  </li>
 		<% else %>
 		  <!-- 未投稿 -->
-		  <li class="d-flex flex-row exhibitionIndexMain-ul_li-yetButton">
-		  	<%= button_to exhibition_congestions_path(exhibition), class: "d-flex flex-row exhibitionIndexMain-ul_li-highyetButton btn btn-secondary", params: { condition: "high" } do %>混んでる<br>
+		  <li class="d-flex flex-row justify-content-around exhibitionIndexMain-ul_li-yetButton">
+		  	<%= button_to exhibition_congestions_path(exhibition), class: "exhibitionIndexMain-ul_li-highyetButton btn btn-secondary", params: { condition: "high" } do %>混んでる<br>
 		  	  <%= exhibition.congestions.where(condition: "high").count %>人
 		    <% end %>
-		    <%= button_to exhibition_congestions_path(exhibition), class: "d-flex flex-row exhibitionIndexMain-ul_li-middleyetButton btn btn-secondary", params: { condition: "middle" } do %>やや混み<br>
+		    <%= button_to exhibition_congestions_path(exhibition), class: "exhibitionIndexMain-ul_li-middleyetButton btn btn-secondary", params: { condition: "middle" } do %>やや混み<br>
 		  	  <%= exhibition.congestions.where(condition: "middle").count %>人
 		    <% end %>
-		    <%= button_to exhibition_congestions_path(exhibition), class: "d-flex flex-row exhibitionIndexMain-ul_li-lowyetButton btn btn-secondary", params: { condition: "low" } do %>空いてる<br>
+		    <%= button_to exhibition_congestions_path(exhibition), class: "exhibitionIndexMain-ul_li-lowyetButton btn btn-secondary", params: { condition: "low" } do %>空いてる<br>
 		  	  <%= exhibition.congestions.where(condition: "low").count %>人
 		    <% end %>
 		  </li>
