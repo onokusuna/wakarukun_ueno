@@ -2,7 +2,76 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.homesTopName {
+  text-align: center;
+}
+
 .homesTopHeading1 {
   text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+
+  &_paragraph {
+    text-align: center;
+    font-size: 1.2em;
+  }
+}
+
+.homesTopHeading2 {
+  text-align: center;
   margin: 2em;
+  margin-bottom: 1em;
+
+  &_paragraph {
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  &_link {
+    margin: 0 auto;
+    display: block;
+    width: 4em;
+    font-size: 1.2em;
+  }
+
+  &_attention {
+    text-align: center;
+    font-size: 0.8em;
+  }
+}
+
+.homesTopHeading3 {
+  text-align: center;
+  margin: 2em;
+  margin-bottom: 1em;
+
+  &_paragraph1 {
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  &_list {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-size: 1.5em;
+  }
+
+  &_paragraph2 {
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  &_link {
+    margin: 0 auto;
+    display: block;
+    width: 4em;
+    font-size: 1.2em;
+  }
+
+  &_attention {
+    text-align: center;
+    margin-bottom: 6em;
+    font-size: 0.8em;
+  }
 }

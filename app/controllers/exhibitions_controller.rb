@@ -1,4 +1,6 @@
 class ExhibitionsController < ApplicationController
+  before_action :congestion_delete, only: [:index, :show]
+
   def index
   	@exhibitions = Exhibition.all
   end
@@ -8,6 +10,10 @@ class ExhibitionsController < ApplicationController
   end
 
   private
+  def congestion_delete
+    Congestion.where("created_at<?",Time.current-(1.hour)).delete_all
+  end
+
   def exhibition_params
     params.require(:exhibition).permit(:name, :place, :start, :end, :image, :description, :summary, :status)
   end

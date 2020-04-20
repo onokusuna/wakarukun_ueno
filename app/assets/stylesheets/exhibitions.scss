@@ -1,3 +1,51 @@
 // Place all the styles related to the exhibitions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.exhibitionIndexMain-ul {
+  padding: 0.5em;
+  list-style: none;
+  border: solid 1px silver;
+
+  &_li-imageTag {
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+    text-align: center;
+  }
+
+  &_li-button {
+  	position: absolute;
+    bottom: 0;
+  }
+  // 投稿済み
+  &_li-highButton {
+    border: solid 1px black;
+    margin: 0.5em 0.5em 0em;
+  }
+
+  &_li-middleButton {
+    border: solid 1px black;
+    margin: 0.5em 0.5em 0em;
+  }
+
+  &_li-lowButton {
+    border: solid 1px black;
+    margin: 0.5em 0.5em 0em;
+  }
+  // 未投稿
+  &_li-highyetButton {
+    border: solid 1px gray;
+    margin: 0.5em 0.5em 0em;
+  }
+
+  &_li-middleyetButton {
+    border: solid 1px gray;
+    margin: 0.5em 0.5em 0em;
+  }
+
+  &_li-lowyetButton {
+    border: solid 1px gray;
+    margin: 0.5em 0.5em 0em;
+  }
+}

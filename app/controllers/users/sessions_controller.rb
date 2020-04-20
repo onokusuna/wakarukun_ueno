@@ -18,7 +18,10 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
+  protected
+  def after_sign_in_path_for(resource)
+    exhibitions_path # ログイン後に遷移するpathを設定
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

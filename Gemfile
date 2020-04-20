@@ -79,9 +79,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
 end
 
-# batch
-gem 'whenever', require: false
-
 # image upload
 gem 'carrierwave'
 gem 'mini_magick'
