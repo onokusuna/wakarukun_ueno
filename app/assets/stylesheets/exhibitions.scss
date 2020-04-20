@@ -76,12 +76,13 @@
 }
 
 // レスポンシブ
+// ipadの場合
 @media screen and (max-width: 1023px) {
   .exhibitionIndexMain-ul {
     width: 48%
   }
 }
-
+// ipadより小さい場合
 @media screen and (max-width: 767px) {
   .exhibitionIndexHeading_pragraph {
     font-size: 0.9em;

@@ -14,10 +14,12 @@
 		<li class="exhibitionIndexMain-ul_li-name"><%= link_to exhibition.name, exhibition_path(exhibition), class: "exhibitionIndexMain-ul_li-nameLink" %>
 		  <!-- クリップ未・済の分岐 -->
 		  <% if exhibition.clipped_by?(current_user) %>
+		  	  <!-- クリップ済み -->
    		      <%= link_to exhibition_clips_path(exhibition), class: "exhibitionIndexMain-ul_li-clippedLink", method: :delete do %>
       	        <i class="fas fa-paperclip"></i>
               <% end %>
           <% else %>
+          	  <!-- 未クリップ -->
               <%= link_to exhibition_clips_path(exhibition), class: "exhibitionIndexMain-ul_li-clipLink", method: :post do %>
       	        <i class="fas fa-paperclip"></i>
               <% end %>

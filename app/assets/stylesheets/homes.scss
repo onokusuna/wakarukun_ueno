@@ -38,6 +38,15 @@
     text-align: center;
     font-size: 0.8em;
   }
+
+  &_imgageDiv {
+    text-align: center;
+  }
+
+  &_imgage {
+    width: 50%;
+    margin-top: 1em;
+  }
 }
 
 .homesTopHeading3 {
@@ -59,7 +68,8 @@
 
   &_paragraph2 {
     text-align: center;
-    font-size: 1.2em;
+    margin-top: 2em;
+    font-size: 1.3em;
   }
 
   &_link {
@@ -73,5 +83,25 @@
     text-align: center;
     margin-bottom: 6em;
     font-size: 0.8em;
+  }
+}
+
+// レスポンシブ
+// ipadの場合
+@media screen and (max-width: 1023px) {
+  .homesTopHeading2_imgage {
+    width: 80%;
+    margin-top: 1em;
+  }
+}
+// ipadより小さい場合
+@media screen and (max-width: 767px) {
+  .homesTopHeading2_imgage {
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  .homesTopHeading3_paragraph1 {
+    font-size: 1.15em;
   }
 }

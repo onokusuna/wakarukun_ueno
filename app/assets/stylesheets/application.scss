@@ -38,7 +38,7 @@
     background-color: #000;
 
     &_link {
-    color: #fff;
+      color: #fff;
     }
   }
 
@@ -62,7 +62,7 @@
     margin-top: 3em;
   }
 
-  // レスポンシブ
+  // レスポンシブ(ipadよりも小さい場合)
   @media screen and (max-width: 767px) {
     .appHeader {
       position: static;

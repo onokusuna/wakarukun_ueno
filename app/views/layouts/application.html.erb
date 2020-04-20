@@ -20,13 +20,13 @@
           <!-- ログイン条件分岐 -->
           <% if user_signed_in? %>
             <div class="col-lg-1 offset-lg-7 col-md appHeader_nav-about"><%= link_to 'About', homes_about_path, class: "appHeader_link" %></div>
-            <div class="col-lg-1 col-md appHeader_nav-exhibitions"><%= link_to 'Exhibitions', exhibitions_path, class: "appHeader_link" %></div>
+            <div class="col-lg-1 col-md appHeader_nav-exhibition"><%= link_to 'Exhibition', exhibitions_path, class: "appHeader_link" %></div>
             <div class="col-lg-1 col-md appHeader_nav-mypage"><%= link_to 'Mypage', user_path(current_user), class: "appHeader_link" %></div>
             <div class="col-lg-1 col-md appHeader_nav-logout"><%= link_to 'Logout', destroy_user_session_path, class: "appHeader_link-blue", method: :delete %></div>
           <% else %>
-            <div class="col-md appHeader_nav-about"><%= link_to 'About', homes_about_path, class: "appHeader_link" %></div>
-            <div class="col-md appHeader_nav-login"><%= link_to 'Log in', new_user_session_path, class: "appHeader_link" %></div>
-            <div class="col-md appHeader_nav-signup"><%= link_to 'Sign up',new_user_registration_path, class: "appHeader_link" %></div>
+            <div class="col-lg-1 offset-lg-8 col-md appHeader_nav-about"><%= link_to 'About', homes_about_path, class: "appHeader_link" %></div>
+            <div class="col-lg-1 col-md appHeader_nav-login"><%= link_to 'Log in', new_user_session_path, class: "appHeader_link" %></div>
+            <div class="col-lg-1 col-md appHeader_nav-signup"><%= link_to 'Sign up',new_user_registration_path, class: "appHeader_link-blue" %></div>
           <% end %>
       </nav>
     </header>
