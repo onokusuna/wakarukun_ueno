@@ -11,7 +11,7 @@ class ExhibitionsController < ApplicationController
 
   private
   def congestion_delete
-    Congestion.where("created_at<?",Time.current-(1.hour)).delete_all
+    Congestion.where("created_at<?",Time.current.ago(1.hours)).delete_all
   end
 
   def exhibition_params
