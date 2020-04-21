@@ -40,8 +40,11 @@
       <% end %>
     <% end %>
   </div>
+  <p class="col-lg-12 exhibitionShowMain1_heed">
+	※混雑度は <%= Time.current.ago(1.hours).strftime("%H時%M分") %> 〜 <%= Time.current.strftime("%H時%M分") %> の実況数
+  </p>
   <div class="exhibitionShowMain1_image"><%= link_to (@exhibition) do %>
-    <%= image_tag @exhibition.image.to_s %>
+    <%= image_tag @exhibition.image.to_s, class: "exhibitionShowMain1_imageTag" %>
     <% end %>
   </div>
 </div>

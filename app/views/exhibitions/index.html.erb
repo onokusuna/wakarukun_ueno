@@ -30,7 +30,7 @@
 			会期：<%= exhibition.start.strftime("%Y年%m月%d日") %> 〜 <%= exhibition.end.strftime("%Y年%m月%d日") %>
 		</li>
 		<li class="exhibitionIndexMain-ul_li-image"><%= link_to (exhibition) do %>
-		  <%= image_tag exhibition.image.to_s, class: "exhibitionIndexMain-ul_li-imageTag" %><br>
+		  <%= image_tag exhibition.image.url(:thumb), class: "exhibitionIndexMain-ul_li-imageTag" %><br>
 		  <% end %>
 		</li>
 		<!-- 混雑度投稿の未・済の分岐 -->
