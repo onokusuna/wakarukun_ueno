@@ -1,30 +1,57 @@
-<div class="exhibitionShowRow">
-  <h2><%= @exhibition.name %></h1>
-  <span><%= @exhibition.place %></span><br>
-  <span class="exhibitionShowRow-start">開催期間：<%= @exhibition.start %> 〜 </span>
-  <span class="exhibitionShowRow-end"><%= @exhibition.end %></span><br>
-  <!-- 混雑度投稿で同じユーザーが投稿していないか確認 -->
-		<%# if exhibition.congested_by?(current_user) %>
-		  <button class="exhibitionIndexRow_col-highButton btn btn-secondary" disabled="disabled">　混んでる　<br>
-		  	<%= exhibition.congestions.where(condition: "high").count %>人</button>
-		  <button class="exhibitionIndexRow_col-mddleButton btn btn-secondary" disabled="disabled">やや混んでる<br>
-		  	<%= exhibition.congestions.where(condition: "middle").count %>人</button>
-		  <button class="exhibitionIndexRow_col-lowButton btn btn-secondary" disabled="disabled">　空いてる　<br>
-		  	<%= exhibition.congestions.where(condition: "low").count %>人</button>
-		<%# else %>
-		  <%= button_to exhibition_congestions_path(exhibition), class: "exhibitionIndexRow_col-highButton btn btn-secondary", params: { condition: "high" } do %>　混んでる　<br>
-		  	<%= exhibition.congestions.where(condition: "high").count %>人</button>
-		  <% end %>
-		  <%= link_to exhibition_congestions_path(exhibition), class: "exhibitionIndexRow_col-mddleButton btn btn-secondary", params: { condition: "middle" } do %>やや混んでる<br>
-		  	<%= exhibition.congestions.where(condition: "middle").count %>人</button>
-		  <% end %>
-		  <%= link_to exhibition_congestions_path(exhibition), class: "exhibitionIndexRow_col-lowButton btn btn-secondary", params: { condition: "low" } do %>　空いてる　<br>
-		  	<%= exhibition.congestions.where(condition: "low").count %>人</button>
-		  <% end %>
-		<%# end %>
-  <%= image_tag @exhibition.image.to_s %>
-  <p class="exhibitionShowRow-description_head">この展覧会について</p>
-  <p class="exhibitionShowRow-description_body"><%= @exhibition.description %></p>
-  <p class="exhibitionShowRow-summary_head">開催概要</p>
-  <p class="exhibitionShowRow-summary_body"><%= @exhibition.summary %></p>
+<div class="exhibitionShowMain1">
+  <h1 class="exhibitionShowMain1_name"><%= @exhibition.name %>
+    <!-- クリップ未・済の分岐 -->
+    <% if @exhibition.clipped_by?(current_user) %>
+      <!-- クリップ済み -->
+	  <%= link_to exhibition_clips_path(@exhibition), class: "exhibitionShowMain1_clippedLink", method: :delete do %>
+	    <i class="fas fa-paperclip"></i>
+      <% end %>
+    <% else %>
+  	  <!-- 未クリップ -->
+      <%= link_to exhibition_clips_path(@exhibition), class: "exhibitionShowMain1_clipLink", method: :post do %>
+	    <i class="fas fa-paperclip"></i>
+      <% end %>
+    <% end %>
+  </h1>
+  <p class="exhibitionShowMain1_place">会場：<%= @exhibition.place %></p>
+  <p class="exhibitionShowMain1_period">
+	会期：<%= @exhibition.start.strftime("%Y年%m月%d日") %> 〜 <%= @exhibition.end.strftime("%Y年%m月%d日") %>
+  </p>
+  <!-- 混雑度投稿の未・済の分岐 -->
+  <div class="d-flex flex-row flex-wrap justify-content-around exhibitionShowMain1-button">
+    <% if @exhibition.congested_by?(current_user) %>
+      <!-- 投稿済み -->
+      <button class="exhibitionShowMain1-button_button btn btn-secondary" disabled="disabled">混んでる<br>
+  	    <%= @exhibition.congestions.where(condition: "high").count %>人</button>
+      <button class="exhibitionShowMain1-button_button btn btn-secondary" disabled="disabled">やや混み<br>
+  	    <%= @exhibition.congestions.where(condition: "middle").count %>人</button>
+      <button class="exhibitionShowMain1-button_button btn btn-secondary" disabled="disabled">空いてる<br>
+  	    <%= @exhibition.congestions.where(condition: "low").count %>人</button>
+    <% else %>
+      <!-- 未投稿 -->
+      <%= button_to exhibition_congestions_path(@exhibition), class: "exhibitionShowMain1-button_yetButton btn btn-secondary", params: { condition: "high" } do %>混んでる<br>
+  	    <%= @exhibition.congestions.where(condition: "high").count %>人</button>
+      <% end %>
+      <%= button_to exhibition_congestions_path(@exhibition), class: "exhibitionShowMain1-button_yetButton btn btn-secondary", params: { condition: "middle" } do %>やや混み<br>
+  	    <%= @exhibition.congestions.where(condition: "middle").count %>人</button>
+      <% end %>
+      <%= button_to exhibition_congestions_path(@exhibition), class: "exhibitionShowMain1-button_yetButton btn btn-secondary", params: { condition: "low" } do %>空いてる<br>
+  	    <%= @exhibition.congestions.where(condition: "low").count %>人</button>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="exhibitionShowMain1_image"><%= link_to (@exhibition) do %>
+    <%= image_tag @exhibition.image.to_s %>
+    <% end %>
+  </div>
+</div>
+<div class="exhibitionShowMain2">
+  <div class="exhibitionShowMain2-description">
+    <p class="exhibitionShowMain2-description_title">この展覧会について</p>
+    <p class="exhibitionShowMain2-description_body"><%= @exhibition.description %></p>
+  </div>
+  <div class="exhibitionShowMain2-summary">
+    <p class="exhibitionShowMain2-summary_title">開催概要</p>
+    <p class="exhibitionShowMain2-summary_body"><%= @exhibition.summary %></p>
+  </div>
 </div>

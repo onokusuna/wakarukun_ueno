@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// index
 .exhibitionIndexMain-ul {
   width: 30%;
   padding: 0.5em;
@@ -35,43 +36,66 @@
     text-align: center;
   }
 
-
-  // 投稿済み
-  &_li-highButton {
+  &_li-button {
     border: solid 1px black;
     margin: 0.5em 0.5em 0em;
     font-size: 0.8em;
   }
 
-  &_li-middleButton {
-    border: solid 1px black;
-    margin: 0.5em 0.5em 0em;
-    font-size: 0.8em;
-  }
-
-  &_li-lowButton {
-    border: solid 1px black;
-    margin: 0.5em 0.5em 0em;
-    font-size: 0.8em;
-  }
-
-  // 未投稿
-  &_li-highyetButton {
+  &_li-yetButton {
     border: solid 1px gray;
     margin: 0.5em 0.5em 0em;
     font-size: 0.8em;
   }
+}
 
-  &_li-middleyetButton {
-    border: solid 1px gray;
-    margin: 0.5em 0.5em 0em;
-    font-size: 0.8em;
+//show
+.exhibitionShowMain1 {
+  text-align: center;
+
+  &_clippedLink {
+    font-size: 0.7em;
+    color: silver;
   }
 
-  &_li-lowyetButton {
-    border: solid 1px gray;
-    margin: 0.5em 0.5em 0em;
-    font-size: 0.8em;
+  &_clipLink {
+    font-size: 0.7em;
+  }
+
+  &_place {
+    margin-bottom: -0.1em;
+    font-size: 1.15em;
+  }
+
+  &_period {
+    font-size: 1.15em;
+  }
+}
+
+.exhibitionShowMain1-button {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.exhibitionShowMain2-description {
+  margin-top: 3em;
+  padding: 1em;
+  border: solid 1px silver;
+  text-align: left;
+
+  &_title {
+    font-size: 1.2em;
+  }
+}
+
+.exhibitionShowMain2-summary {
+  margin-top: 3em;
+  padding: 1em;
+  border: solid 1px silver;
+  text-align: left;
+
+  &_title {
+    font-size: 1.2em;
   }
 }
 
