@@ -1,20 +1,26 @@
 <!-- ヘディング -->
 <h2 class="userShowHeading">マイページ</h2>
 <!-- メイン1 -->
-<h4 class="userShow-info-heading">登録情報</h4>
-<div class="row userShowRow-info">
-  <div class="col-lg-1 offset-lg-4 userShowRow-info_ArticleCol-name">名前</div>
-  <div class="col-lg-3 userShowRow-info_ContentCol-name"><%= current_user.name %></div>
-  <div class="col-lg-1 offset-lg-4 userShowRow-info_ArticleCol-email">メール<br>アドレス</div>
-  <div class="col-lg-3 userShowRow-info_ContentCol-email"><%= current_user.email %></div>
-  <div class="col-lg-1 offset-lg-8 btn btn-primary userShowRow-info_linkCol-edit"><%= link_to "変更", edit_user_path(current_user) %></div>
-  <span class="userShowRow-info-leave"><%= link_to "退会する", users_leave_users_path(current_user) %></span>
+<h4 class="userShowMain1-heading">登録情報</h4>
+<div class="userShowMain1-info">
+  <div class="row userShowMain1-info">
+    <div class="col-lg-2 col-md-3 col-5 userShowMain1-info_article-name">名前</div>
+    <div class="col-lg-3 col-md-4 col-7 userShowMain1-info_content-name"><%= current_user.name %></div>
+  </div>
+  <div class="row userShowMain1-info">
+    <div class="col-lg-2 col-md-3 col-5 userShowMain1-info_article-email">メールアドレス</div>
+    <div class="col-lg-3 col-md-4 col-7 userShowMain1-info_content-email"><%= current_user.email %></div>
+  </div>
+  <div class="row userShowMain1-info">
+    <div class="col-lg-1 col-md-2 col-2 btn btn-primary userShowMain1-info_edit"><%= link_to "変更する", edit_user_path(current_user) , class: "userShowMain1-info_editLink"%></div>
+    <div class="col-lg-1 col-md-2 col-2 userShowMain1-info_leave"><%= link_to "退会する", users_leave_users_path(current_user) , class: "userShowMain1-info_leaveLink" %></div>
+  </div>
 </div>
 <!-- メイン2 -->
-<h4 class="userShow-clip-heading">クリップした展覧会</h4>
-<div class="row userShowRow-clip">
-  <table class="table col-lg-10 offset-lg-1 userShowRow-clip_tableCol">
-  	<thead class="thead-dark userShowRow-clip_tableCol_thead">
+<h4 class="userShowMain2-heading">クリップした展覧会</h4>
+<div class="row userShowMain2-clip">
+  <table class="table col-lg-12 userShowMain2-clip_table">
+  	<thead class="thead-dark userShowMain2-clip_tableThead">
   	  <tr>
   		<th>会場</th>
   		<th>展覧会名</th>
@@ -22,15 +28,13 @@
   	  </tr>
   	</thead>
   	<tbody>
-        <tr>
-          <td>東京が立てた美術館</td>
-          <td>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</td>
-          <td>2020-04-01 〜 2020-04-01</td>
-        <tr>
   	  <% current_user.clips.each do |clip| %>
+        <tr>
   	      <td><%= clip.exhibition.place %></td>
-  	      <td><%= clip.exhibition.name %></td>
-  	      <td><%= clip.exhibition.start %> 〜 <%= clip.exhibition.end %></td>
-  	  <% end %>
+  	      <td><%= link_to clip.exhibition.name, exhibition_path(clip.exhibition) %></td>
+  	      <td><%= clip.exhibition.start.strftime("%Y年%m月%d日")%> 〜 <%= clip.exhibition.end.strftime("%Y年%m月%d日") %></td>
+        </tr>
+  	 <% end %>
   	</tbody>
   </table>
+</div>

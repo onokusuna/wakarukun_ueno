@@ -2,25 +2,121 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.userShow-info-heading {
-  margin: 0 auto;
+.userShowMain1-heading {
+  margin-top: 1.5em;
+  margin-bottom: 0.6em;
 }
 
-.userShowRow-info {
+// show
+.userShowMain1-info {
 
-  &_ArticleCol-email {
-    font-size: 0.8em;
+  &_article-name {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.4em;
+    border: solid 1px;
+  }
 
-  &_ContentCol {
+  &_article-email {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.4em;
+    margin-bottom: 1em;
+    border-right: solid 1px;
+    border-left: solid 1px;
+    border-bottom: solid 1px;
+  }
+
+  &_content-name {
   	text-align: center;
+    vertical-align: middle;
+    padding: 0.4em;
+    border-top: solid 1px;
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+  }
 
-  &_linkCol-edit {
+  &_content-email {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.4em;
+    margin-bottom: 1em;
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+  }
+
+  &_editLink {
     color: #fff;
+  }
 
-  &-leave {
+  &_leaveLink {
   	text-align: bottom;
+    vertical-align: bottom;
   }
+}
+
+.userShowMain2-heading {
+  margin: 2em 0 0.6em;
+}
+
+// edit
+.userEditMain-info {
+
+  &_article-name {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.4em;
+    border: solid 1px;
   }
+
+  &_article-email {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.4em;
+    margin-bottom: 1em;
+    border-right: solid 1px;
+    border-left: solid 1px;
+    border-bottom: solid 1px;
   }
+
+  &_content-name {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.4em;
+    border-top: solid 1px;
+    border-right: solid 1px;
+    border-bottom: solid 1px;
   }
+
+  &_content-email {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.4em;
+    margin-bottom: 1em;
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+  }
+}
+
+// レスポンシブ
+// ipadの場合
+@media screen and (max-width: 1199px) {
+  .userShowMain1-info1 {
+
+    &_editLink {
+    }
+
+    &_leaveLink {
+    }
+  }
+}
+
+// ipadより小さい場合
+@media screen and (max-width: 767px) {
+  .userShowMain1-info3 {
+
+  &_leaveLink {
+    font-size: 0.9em;
+  }
+ }
 }

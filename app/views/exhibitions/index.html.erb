@@ -39,7 +39,7 @@
 		  <li class="d-flex flex-row justify-content-around exhibitionIndexMain-ul_li-buttons">
 			<button class="exhibitionIndexMain-ul_li-button btn btn-secondary" disabled="disabled">混んでる<br>
 			  <%= exhibition.congestions.where(condition: "high").count %>人</button>
-			<button class="exhibitionIndexMain-ul_li-button btn btn-secondary" disabled="disabled">やや混み<br>
+			<button class="exhibitionIndexMain-ul_li-button btn btn-secondary" disabled="disabled">やや混雑<br>
 			  <%= exhibition.congestions.where(condition: "middle").count %>人</button>
 			<button class="exhibitionIndexMain-ul_li-button btn btn-secondary" disabled="disabled">空いてる<br>
 			  <%= exhibition.congestions.where(condition: "low").count %>人</button>
@@ -50,7 +50,7 @@
 		  	<%= button_to exhibition_congestions_path(exhibition), class: "exhibitionIndexMain-ul_li-yetButton btn btn-secondary", params: { condition: "high" } do %>混んでる<br>
 		  	  <%= exhibition.congestions.where(condition: "high").count %>人
 		    <% end %>
-		    <%= button_to exhibition_congestions_path(exhibition), class: "exhibitionIndexMain-ul_li-yetButton btn btn-secondary", params: { condition: "middle" } do %>やや混み<br>
+		    <%= button_to exhibition_congestions_path(exhibition), class: "exhibitionIndexMain-ul_li-yetButton btn btn-secondary", params: { condition: "middle" } do %>やや混雑<br>
 		  	  <%= exhibition.congestions.where(condition: "middle").count %>人
 		    <% end %>
 		    <%= button_to exhibition_congestions_path(exhibition), class: "exhibitionIndexMain-ul_li-yetButton btn btn-secondary", params: { condition: "low" } do %>空いてる<br>

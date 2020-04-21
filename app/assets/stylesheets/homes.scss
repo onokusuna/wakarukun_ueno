@@ -90,17 +90,12 @@
 // ipadの場合
 @media screen and (max-width: 1023px) {
   .homesTopHeading2_imgage {
-    width: 80%;
+    width: 100%;
     margin-top: 1em;
   }
 }
 // ipadより小さい場合
 @media screen and (max-width: 767px) {
-  .homesTopHeading2_imgage {
-    width: 100%;
-    margin-top: 1em;
-  }
-
   .homesTopHeading3_paragraph1 {
     font-size: 1.15em;
   }
