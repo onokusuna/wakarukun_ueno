@@ -12,8 +12,8 @@
     <div class="col-lg-3 col-md-4 col-7 userShowMain1-info_content-email"><%= current_user.email %></div>
   </div>
   <div class="row userShowMain1-info">
-    <div class="col-lg-1 col-md-2 col-2 btn btn-primary userShowMain1-info_edit"><%= link_to "変更する", edit_user_path(current_user) , class: "userShowMain1-info_editLink"%></div>
-    <div class="col-lg-1 col-md-2 col-2 userShowMain1-info_leave"><%= link_to "退会する", users_leave_users_path(current_user) , class: "userShowMain1-info_leaveLink" %></div>
+    <div class="col-lg-1 col-md-2 col-3 btn btn-primary userShowMain1-info_edit"><%= link_to "変更", edit_user_path(current_user) , class: "userShowMain1-info_editLink"%></div>
+    <div class="col-lg-1 col-md-2 col-3 userShowMain1-info_leave"><%= link_to "退会する", users_leave_users_path(current_user) , class: "userShowMain1-info_leaveLink" %></div>
   </div>
 </div>
 <!-- メイン2 -->

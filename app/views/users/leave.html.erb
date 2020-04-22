@@ -1,7 +1,13 @@
-<!-- 確認文 -->
+<div class="">
+  <!-- 確認文 -->
   <h2 class="userLeave-heading">本当に退会しますか？</h2>
-<!-- 選択ボタン -->
-<div class="row userLeaveRow-choice">
-  <%= link_to "続ける", user_path(current_user), class: "col-lg-1 offset-lg-4 btn btn-primary userLeaveRow-choice_col-continue" %>
-  <%= link_to "退会する", users_active_leave_users_path, class: "col-lg-1 offset-lg-2 btn btn-danger userLeaveRow-choice_col-withdrawal", method: :patch %>
+  <!-- 選択ボタン -->
+  <div class="row userLeave-choice">
+    <div class="col-lg-2 offset-lg-3 userLeave-choice_continue">
+      <%= link_to "続ける", user_path(current_user), class: "btn btn-primary userLeave-choice_continueLink" %>
+    </div>
+    <div class="col-lg-2 offset-lg-3 userLeave-choice_withdrawa">
+      <%= link_to "退会する", users_active_leave_users_path, class: "btn btn-danger userLeave-choice_withdrawalLink", method: :patch %>
+    </div>
+  </div>
 </div>

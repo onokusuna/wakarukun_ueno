@@ -1,17 +1,21 @@
-<!-- ヘディング -->
+<!-- users_editヘディング -->
 <h2 class="userEditHeading">登録情報変更</h2>
-<!-- メイン -->
+<!-- users_editメイン -->
 <h4 class="userEditMain-heading">登録情報</h4>
 <%= form_for(current_user) do |f| %>
   <div class="row userEditMain-info">
-    <div class="col-lg-2 col-md-3 col-5 userEditMain-info_Article_name">名前
-    <%= f.text_field :name, class: "col-lg-3 col-md-4 col-7 userEditMain-info_content_name" %></div>
+    <div class="col-lg-2 col-md-3 col-5 userEditMain-info_article-name">名前</div>
+    <div class="col-lg-3 col-md-4 col-7 userEditMain-info_content-name">
+      <%= f.text_field :name, class: "form-control userEditMain-info_content-nameForm" %>
+    </div>
   </div>
-  <div class="row">
-    <div class="col-lg-2 col-md-3 col-5 userEditMain-info_Article_email">メールアドレス
-    <%= f.text_field :email, class: "col-lg-3 col-md-4 col-7 userEditMain-info_content_email" %></div>
+  <div class="row userEditMain-info">
+    <div class="col-lg-2 col-md-3 col-5 userEditMain-info_article-email">メールアドレス</div>
+    <div class="col-lg-3 col-md-4 col-7 userEditMain-info_content-email">
+      <%= f.text_field :email, class: "form-control userEditMain-info_content-emailForm" %>
+    </div>
   </div>
-  <div class="row">
-    <%= f.submit '保存', class: "col-lg-1 offset-lg-8 btn btn-primary userEditMain-info_submit" %>
+  <div class="row userEditMain-info">
+    <%= f.submit '保存', class: "col-lg-1 col-md-2 col-3 btn btn-primary userEditMain-info-submit" %>
   </div>
 <% end %>
