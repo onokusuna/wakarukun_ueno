@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <!-- ヘッダー -->
+    <!-- appヘッダー -->
     <header class="container-fluid appHeader">
       <nav class="row appHeader_nav">
         <div class="col-lg-1 col-md appHeader_nav-logo"><%= link_to 'Wakarukun', root_path, class: "appHeader_link" %></div>
@@ -30,15 +30,17 @@
           <% end %>
       </nav>
     </header>
-    <!-- メイン -->
+    <!-- appメイン -->
       <div class="container appMain_container">
         <section class="appSection">
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
+          <p class="success"><%= flash[:success] %></p>
+          <p class="danger"><%= flash[:danger] %></p>
         </section>
       <%= yield %>
       </div>
-    <!-- フッター -->
+    <!-- appフッター -->
     <footer class="container-fluid appFooter">
       <div class="row appFooter">
         <span class="col-lg-12 appFooter_copyright">&copy;copyright student</span>

@@ -1,11 +1,11 @@
-<!-- ヘディング -->
+<!-- indexヘディング -->
 <div class="row exhibitionIndexHeading"></div>
 <h2 class="col-lg-12 exhibitionIndexHeading_heading">開催中展覧会一覧</h2>
   <p class="col-lg-12 exhibitionIndexHeading_pragraph">
 	※混雑度は <%= Time.current.ago(1.hours).strftime("%H時%M分") %> 〜 <%= Time.current.strftime("%H時%M分") %> の実況数
   </p>
 
-<!-- メイン -->
+<!-- indexメイン -->
 <div class="d-flex flex-wrap justify-content-around exhibitionIndexMain">
 <% @exhibitions.each do |exhibition| %>
   <% if "Now" == exhibition.status %>
@@ -14,15 +14,15 @@
 		<li class="exhibitionIndexMain-ul_li-name"><%= link_to exhibition.name, exhibition_path(exhibition), class: "exhibitionIndexMain-ul_li-nameLink" %>
 		  <!-- クリップ未・済の分岐 -->
 		  <% if exhibition.clipped_by?(current_user) %>
-		  	  <!-- クリップ済み -->
-   		      <%= link_to exhibition_clips_path(exhibition), class: "exhibitionIndexMain-ul_li-clippedLink", method: :delete do %>
-      	        <i class="fas fa-paperclip"></i>
-              <% end %>
+		  	<!-- クリップ済み -->
+   		    <%= link_to exhibition_clips_path(exhibition), class: "exhibitionIndexMain-ul_li-clippedLink", method: :delete do %>
+      	      <i class="fas fa-paperclip"></i>
+            <% end %>
           <% else %>
-          	  <!-- 未クリップ -->
-              <%= link_to exhibition_clips_path(exhibition), class: "exhibitionIndexMain-ul_li-clipLink", method: :post do %>
-      	        <i class="fas fa-paperclip"></i>
-              <% end %>
+          	<!-- 未クリップ -->
+            <%= link_to exhibition_clips_path(exhibition), class: "exhibitionIndexMain-ul_li-clipLink", method: :post do %>
+      	      <i class="fas fa-paperclip"></i>
+            <% end %>
           <% end %>
         </li>
 		<li class="exhibitionIndexMain-ul_li-place">会場：<%= exhibition.place %></li>

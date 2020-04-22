@@ -4,7 +4,7 @@ class Exhibition < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :name, presence: true, length: { maximum: 100 }
+  validates :name, presence: true, length: { maximum: 50 }
   validates :place, presence: true
   validates :start, presence: true
   validates :end, presence: true

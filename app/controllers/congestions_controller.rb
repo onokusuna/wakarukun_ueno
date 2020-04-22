@@ -2,8 +2,12 @@ class CongestionsController < ApplicationController
   def create
     exhibition = Exhibition.find(params[:exhibition_id])
   	congestion = current_user.congestions.new(congestion_params)
-    congestion.save
-  	redirect_back(fallback_location: root_path)
+    if congestion.save
+  	  redirect_back(fallback_location: root_path)
+    else
+      redirect_to root_path
+      flash[:danger] = "混雑度の投稿に失敗しました。"
+    end
   end
 
   private

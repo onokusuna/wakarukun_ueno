@@ -1,6 +1,6 @@
-<!-- ヘディング -->
+<!-- showヘディング -->
 <h2 class="userShowHeading">マイページ</h2>
-<!-- メイン1 -->
+<!-- showメイン1 -->
 <h4 class="userShowMain1-heading">登録情報</h4>
 <div class="userShowMain1-info">
   <div class="row userShowMain1-info">
@@ -16,7 +16,7 @@
     <div class="col-lg-1 col-md-2 col-3 userShowMain1-info_leave"><%= link_to "退会する", users_leave_users_path(current_user) , class: "userShowMain1-info_leaveLink" %></div>
   </div>
 </div>
-<!-- メイン2 -->
+<!-- showメイン2 -->
 <h4 class="userShowMain2-heading">クリップした展覧会</h4>
 <div class="row userShowMain2-clip">
   <table class="table col-lg-12 userShowMain2-clip_table">
@@ -37,4 +37,6 @@
   	 <% end %>
   	</tbody>
   </table>
+     <!-- ページネーション -->
+     <%= paginate @clip, class: "userShowMain2-clip_paginate" %>
 </div>
