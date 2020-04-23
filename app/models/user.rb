@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :congestions, dependent: :destroy
   has_many :clips, dependent: :destroy
+  has_many :exhibitions, through: :clips
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
   validates :email, presence: true, uniqueness: true

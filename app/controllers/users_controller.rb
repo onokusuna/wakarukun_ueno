@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @clip = current_user.clips.includes(:exhibition).page(params[:page]).reverse_order
+    @exhibitions = current_user.exhibitions.page(params[:page]).reverse_order
   end
 
   def edit
@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   end
 
   def update
-  	if current_user.update(user_params)
+    @user = User.find(params[:id])
+  	if @user.update(user_params)
       flash[:success] = "登録情報が変更されました。"
   	  redirect_to user_path(current_user)
   	else

@@ -1,6 +1,7 @@
 class Exhibition < ApplicationRecord
   has_many :clips, dependent: :destroy
   has_many :congestions, dependent: :destroy
+  has_many :users, through: :clips
 
   mount_uploader :image, ImageUploader
 

@@ -107,6 +107,19 @@
 }
 
 // レスポンシブ
+// ボタン折り返し防止
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  .exhibitionIndexMain-ul {
+
+    &_li-button {
+      font-size: 0.8em;
+    }
+
+    &_li-yetButton {
+      font-size: 0.8em;
+    }
+  }
+}
 // ipad以上の場合
 @media screen and (max-width: 1023px) {
   .exhibitionIndexMain-ul {

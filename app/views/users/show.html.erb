@@ -28,15 +28,15 @@
   	  </tr>
   	</thead>
   	<tbody>
-  	  <% current_user.clips.each do |clip| %>
+  	  <% @exhibitions.each do |exhibition| %>
         <tr>
-  	      <td><%= clip.exhibition.place %></td>
-  	      <td><%= link_to clip.exhibition.name, exhibition_path(clip.exhibition) %></td>
-  	      <td><%= clip.exhibition.start.strftime("%Y年%m月%d日")%> 〜 <%= clip.exhibition.end.strftime("%Y年%m月%d日") %></td>
+  	      <td><%= exhibition.place %></td>
+  	      <td><%= link_to exhibition.name, exhibition_path(exhibition) %></td>
+  	      <td><%= exhibition.start.strftime("%Y年%m月%d日")%> 〜 <%= exhibition.end.strftime("%Y年%m月%d日") %></td>
         </tr>
   	 <% end %>
   	</tbody>
   </table>
      <!-- ページネーション -->
-     <%= paginate @clip, class: "userShowMain2-clip_paginate" %>
+     <%= paginate @exhibitions, class: "userShowMain2-clip_paginate" %>
 </div>

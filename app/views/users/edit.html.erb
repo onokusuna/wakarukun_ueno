@@ -1,4 +1,13 @@
-<!-- editエラーメッセージ --><!-- editヘディング -->
+<!-- editエラーメッセージ -->
+<% if @user.errors.any? %>
+  <%= pluralize(@user.errors.count,"error") %>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
+<!-- editヘディング -->
 <h2 class="userEditHeading">登録情報変更</h2>
 <!-- editメイン -->
 <h4 class="userEditMain-heading">登録情報</h4>
