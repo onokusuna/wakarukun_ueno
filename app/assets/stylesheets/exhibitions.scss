@@ -38,13 +38,11 @@
   }
 
   &_li-button {
-    border: solid 1px black;
     margin: 0.5em 0.5em 0em;
     font-size: 0.8em;
   }
 
   &_li-yetButton {
-    border: solid 1px gray;
     margin: 0.5em 0.5em 0em;
     font-size: 0.8em;
   }
@@ -111,37 +109,105 @@
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
   .exhibitionIndexMain-ul {
 
+    &_li-name {
+      min-height: 3.5em;
+    }
+
     &_li-button {
-      font-size: 0.8em;
+      font-size: 0.75em;
     }
 
     &_li-yetButton {
-      font-size: 0.8em;
+      font-size: 0.75em;
     }
   }
 }
 // ipad以上の場合
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .exhibitionIndexMain-ul {
     width: 48%;
+
+    &_li-name {
+      min-height: 3.5em;
+    }
 
     &_li-imageTag {
       height: 280px;
     }
+
+    &_li-button {
+      font-size: 0.9em;
+    }
+
+    &_li-yetButton {
+      font-size: 0.9em;
+    }
+  }
+
+  .exhibitionShowMain1 {
+
+    &_imageTag {
+      width: 80%;
+    }
+  }
+
+  .exhibitionShowMain1-button {
+    width: 40%;
   }
 }
 // ipadより小さい場合
 @media screen and (max-width: 767px) {
-  .exhibitionIndexHeading_pragraph {
-    font-size: 0.9em;
+  .exhibitionIndexHeading {
+
+    &_heading {
+      text-align: center;
+      font-size: 2.5em;
+    }
+
+    &_pragraph {
+      text-align: center;
+      margin-bottom: 2em;
+      font-size: 1.2em;
+    }
   }
 
   .exhibitionIndexMain-ul {
     width: 100%;
 
+    &_li-name {
+      font-size: 1.5em;
+    }
+
+    &_li-place {
+      font-size: 1.2em;
+    }
+
+    &_li-period {
+      font-size: 1.2em;
+    }
+
     &_li-imageTag {
       width: 490px;
       height: 100%;
     }
+
+    &_li-button {
+      font-size: 1em;
+    }
+
+    &_li-yetButton {
+      font-size: 1em;
+    }
+  }
+
+  .exhibitionShowMain1 {
+
+    &_imageTag {
+      width: 100%;
+    }
+  }
+
+  .exhibitionShowMain1-button {
+    width: 60%;
   }
 }

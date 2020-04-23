@@ -19,13 +19,12 @@
 
 .homesTopHeading2 {
   text-align: center;
-  margin: 2em;
+  margin: 2em 0;
   margin-bottom: 1em;
 
   &_paragraph {
     text-align: center;
-    font-size: 1.2em;
-  }
+    font-size: 1.2em;  }
 
   &_link {
     margin: 0 auto;
@@ -39,19 +38,24 @@
     font-size: 0.8em;
   }
 
-  &_imgageDiv {
+  &_imgage {
     text-align: center;
   }
 
-  &_imgage {
+  &_imgageTag {
     width: 70%;
     margin-top: 1em;
+  }
+
+  &_heed {
+    text-align: center;
+    font-size: 0.9em;
   }
 }
 
 .homesTopHeading3 {
   text-align: center;
-  margin: 2em;
+  margin: 2em 0;
   margin-bottom: 1em;
 
   &_paragraph1 {
@@ -60,10 +64,10 @@
   }
 
   &_list {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5em;
   }
 
   &_paragraph2 {
@@ -89,14 +93,36 @@
 // レスポンシブ
 // ipadの場合
 @media screen and (max-width: 1023px) {
-  .homesTopHeading2_imgage {
+  .homesTopHeading2_imgageTag {
     width: 100%;
     margin-top: 1em;
   }
 }
 // ipadより小さい場合
 @media screen and (max-width: 767px) {
-  .homesTopHeading3_paragraph1 {
-    font-size: 1.15em;
+
+  .homesTopName {
+    word-break: break-all;
+    font-size: 1.8em;
+  }
+
+  .homesTopHeading1 {
+    word-break: break-all;
+    font-size: 1.8em;
+  }
+
+  .homesTopHeading2 {
+    word-break: break-all;
+    font-size: 1.8em;
+  }
+
+  .homesTopHeading3 {
+    word-break: break-all;
+    font-size: 1.8em;
+
+    &_paragraph1 {
+      word-break: break-all;
+      font-size: 1.15em;
+    }
   }
 }

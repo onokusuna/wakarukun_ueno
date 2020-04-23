@@ -25,6 +25,7 @@
   		<th>会場</th>
   		<th>展覧会名</th>
   		<th>開催期間</th>
+      <th></th>
   	  </tr>
   	</thead>
   	<tbody>
@@ -33,10 +34,11 @@
   	      <td><%= exhibition.place %></td>
   	      <td><%= link_to exhibition.name, exhibition_path(exhibition) %></td>
   	      <td><%= exhibition.start.strftime("%Y年%m月%d日")%> 〜 <%= exhibition.end.strftime("%Y年%m月%d日") %></td>
+          <td><%= link_to "削除", exhibition_clips_path(exhibition), class: "userShowMain2_li-clippedLink", method: :delete %></td>
         </tr>
   	 <% end %>
   	</tbody>
   </table>
-     <!-- ページネーション -->
-     <%= paginate @exhibitions, class: "userShowMain2-clip_paginate" %>
+  <!-- ページネーション -->
+  <%= paginate @exhibitions, class: "userShowMain2-clip_paginate" %>
 </div>
