@@ -11,4 +11,8 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
   validates :email, presence: true, uniqueness: true
   validates :encrypted_password, presence: true, uniqueness: true
+
+  def active_for_authentication?
+    super && self.status == "Active"
+  end
 end

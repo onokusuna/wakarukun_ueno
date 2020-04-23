@@ -69,3 +69,43 @@
       position: static;
     }
   }
+
+  // devise_sessons
+  .sessions {
+    margin: 5em auto;
+  }
+
+  .sessions_col {
+    padding: 0.5em;
+    border: solid 1px;
+  }
+
+  input[type="email"] {
+    width: 100%;
+  }
+
+  input[type="password"] {
+    width: 100%;
+  }
+
+  // devise_registrations
+  .registrations {
+    margin: 5em auto;
+  }
+
+  .registrations_col {
+    padding: 0.5em;
+    border: solid 1px;
+  }
+
+  .registrations_actions {
+      margin-top: 0.3em;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  .error_messages {
+    list-style: none;
+  }
