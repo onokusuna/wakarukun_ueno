@@ -1,19 +1,16 @@
 <!-- topアプリ名 -->
 <h1 class="homesTopName">リアルタイム投稿アプリ<br>〜これで上野の美術館・博物館の混雑度がわかる〜<br>（通称：わかるくん）</h1>
 <!-- topヘディング1 -->
-<h2 class="homesTopHeading1">このアプリは私の実体験から生まれました。</h2>
-    <p class="homesTopHeading1_paragraph">私は趣味で美術館めぐりをしているのですが、<br>展覧会が混雑していると作品が十分に楽しめなかったという経験が何度かありました。<br>混雑が事前にわかればいいのにという思いからこのアプリを作成しました。</p>
+<h2 class="homesTopHeading1">ユーザーが混雑度を投稿し、共有できる。</h2>
+  <p class="homesTopHeading1_paragraph">使い方は簡単です。該当している混雑度をクリックするだけ。</p>
+  <%= link_to "利用する", new_user_registration_path, class: "homesTopHeading1_link" %>
+  <p class="homesTopHeading1_attention">※ご利用には会員登録が必要です</p>
+  <div class="homesTopHeading1_imgage"><%= image_tag "/assets/top_image.jpg", class: "homesTopHeading1_imgageTag" %></div>
+  <p class="homesTopHeading1_heed">※混雑度は1時間の実況数</p>
 <!-- topヘディング2 -->
-<h2 class="homesTopHeading2">ユーザーが混雑度を投稿し、共有できる。</h2>
-  <p class="homesTopHeading2_paragraph">使い方は簡単です。該当している混雑度をクリックするだけ。</p>
-  <%= link_to "利用する", new_user_registration_path, class: "homesTopHeading2_link" %>
-  <p class="homesTopHeading2_attention">※ご利用には会員登録が必要です</p>
-  <div class="homesTopHeading2_imgage"><%= image_tag "/assets/top_image.jpg", class: "homesTopHeading2_imgageTag" %></div>
-  <p class="homesTopHeading2_heed">※混雑度は1時間の実況数</p>
-<!-- topヘディング3 -->
-<h2 class="homesTopHeading3">対象の展覧会は<br>上野にある代表的な美術館･博物館で開催中のものです。</h2>
-  <p class="homesTopHeading3_paragraph1">分かりやすさや動作の速さを重視し、対象を以下の美術館･博物館にしました。</p>
-    <div class="homesTopHeading3_list">
+<h2 class="homesTopHeading2">対象の展覧会は<br>上野にある代表的な美術館･博物館で開催中のものです。</h2>
+  <p class="homesTopHeading2_paragraph1">分かりやすさや動作の速さを重視し、対象を以下の美術館･博物館にしました。</p>
+    <div class="homesTopHeading2_list">
       <ul>
 	      <li>東京が立てた美術館</li>
         <li>上野の木木木美術館</li>
@@ -22,6 +19,6 @@
 	      <li>国が立てた博物館</li>
 	    </ul>
     </div>
-  <p class="homesTopHeading3_paragraph2">今すぐ体験してみませんか？</p>
-  <%= link_to "利用する", new_user_registration_path, class: "homesTopHeading3_link" %>
-  <p class="homesTopHeading3_attention">※ご利用には会員登録が必要です</p>
+  <p class="homesTopHeading2_paragraph2">今すぐ体験してみませんか？</p>
+  <%= link_to "利用する", new_user_registration_path, class: "homesTopHeading2_link" %>
+  <p class="homesTopHeading2_attention">※ご利用には会員登録が必要です</p>

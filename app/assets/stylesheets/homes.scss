@@ -8,17 +8,6 @@
 
 .homesTopHeading1 {
   text-align: center;
-  margin-top: 2em;
-  margin-bottom: 1em;
-
-  &_paragraph {
-    text-align: center;
-    font-size: 1.2em;
-  }
-}
-
-.homesTopHeading2 {
-  text-align: center;
   margin: 2em 0;
   margin-bottom: 1em;
 
@@ -53,7 +42,7 @@
   }
 }
 
-.homesTopHeading3 {
+.homesTopHeading2 {
   text-align: center;
   margin: 2em 0;
   margin-bottom: 1em;
@@ -90,6 +79,55 @@
   }
 }
 
+// about
+.homesAboutHeading1 {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+
+  &_paragraph {
+    text-align: center;
+    font-size: 1.2em;
+  }
+}
+
+.homesAboutHeading2 {
+  text-align: center;
+  margin: 2em 0;
+  margin-bottom: 1em;
+
+  &_paragraph {
+    text-align: center;
+    font-size: 1.2em;
+  }
+}
+
+.homesAboutHeading3 {
+  text-align: center;
+  margin: 2em 0;
+  margin-bottom: 1em;
+
+  &_paragraph {
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  &_imgage {
+    text-align: center;
+  }
+
+  &_imgageTag-clip {
+    width: 70%;
+    margin-top: 2em;
+  }
+
+  &_imgageTag-index {
+    width: 100%;
+    margin-top: 4em;
+    margin-bottom: 6em;
+  }
+}
+
 // レスポンシブ
 // ipadの場合
 @media screen and (max-width: 1023px) {
@@ -97,31 +135,33 @@
     width: 100%;
     margin-top: 1em;
   }
+
+  .homesAboutHeading3 {
+
+    &_imgageTag-clip {
+      width: 100%;
+    }
+  }
 }
 // ipadより小さい場合
 @media screen and (max-width: 767px) {
 
   .homesTopName {
-    word-break: break-all;
     font-size: 1.8em;
   }
 
   .homesTopHeading1 {
-    word-break: break-all;
     font-size: 1.8em;
   }
 
   .homesTopHeading2 {
-    word-break: break-all;
     font-size: 1.8em;
   }
 
   .homesTopHeading3 {
-    word-break: break-all;
     font-size: 1.8em;
 
     &_paragraph1 {
-      word-break: break-all;
       font-size: 1.15em;
     }
   }

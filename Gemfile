@@ -82,3 +82,6 @@ end
 # image upload
 gem 'carrierwave'
 gem 'mini_magick'
+
+# debug
+gem 'pry-byebug'

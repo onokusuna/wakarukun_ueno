@@ -32,9 +32,9 @@
   	  <% @exhibitions.each do |exhibition| %>
         <tr>
   	      <td><%= exhibition.place %></td>
-  	      <td><%= link_to exhibition.name, exhibition_path(exhibition) %></td>
+  	      <td><%= link_to exhibition.name, exhibition_path(exhibition), class: "userShowMain2-clip_exhibitionLink" %></td>
   	      <td><%= exhibition.start.strftime("%Y年%m月%d日")%> 〜 <%= exhibition.end.strftime("%Y年%m月%d日") %></td>
-          <td><%= link_to "削除", exhibition_clips_path(exhibition), class: "userShowMain2_li-clippedLink", method: :delete %></td>
+          <td><%= link_to "削除", exhibition_clips_path(exhibition), class: "userShowMain2-clip_clippedLink", method: :delete %></td>
         </tr>
   	 <% end %>
   	</tbody>

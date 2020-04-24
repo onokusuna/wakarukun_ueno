@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @exhibitions = current_user.exhibitions.page(params[:page]).reverse_order
+    @exhibitions = current_user.exhibitions.page(params[:page]).order(:id)
   end
 
   def edit
