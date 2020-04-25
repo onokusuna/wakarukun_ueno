@@ -85,3 +85,9 @@ gem 'mini_magick'
 
 # debug
 gem 'pry-byebug'
+
+# deploy
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
