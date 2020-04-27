@@ -131,7 +131,7 @@
 // レスポンシブ
 // ipadの場合
 @media screen and (max-width: 1023px) {
-  .homesTopHeading2_imgageTag {
+  .homesTopHeading1_imgageTag {
     width: 100%;
     margin-top: 1em;
   }
@@ -155,10 +155,6 @@
   }
 
   .homesTopHeading2 {
-    font-size: 1.8em;
-  }
-
-  .homesTopHeading3 {
     font-size: 1.8em;
 
     &_paragraph1 {
