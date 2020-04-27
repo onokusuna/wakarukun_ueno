@@ -45,7 +45,7 @@ ActiveAdmin.register Exhibition do
         row :end
         # show画面で画像を表示するためのタグを追加
         row :image do
-          image_tag(exhibition.image.url)
+          image_tag(exhibition.image.to_s)
         end
         row :description
         row :summary

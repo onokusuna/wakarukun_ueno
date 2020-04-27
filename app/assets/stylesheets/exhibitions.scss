@@ -161,7 +161,7 @@
 
     &_heading {
       text-align: center;
-      font-size: 2.5em;
+      font-size: 2.3em;
     }
 
     &_pragraph {
@@ -175,7 +175,7 @@
     width: 100%;
 
     &_li-name {
-      font-size: 1.5em;
+      font-size: 1.3em;
     }
 
     &_li-place {
@@ -187,16 +187,15 @@
     }
 
     &_li-imageTag {
-      width: 490px;
       height: 100%;
     }
 
     &_li-button {
-      font-size: 1em;
+      font-size: 0.9em;
     }
 
     &_li-yetButton {
-      font-size: 1em;
+      font-size: 0.9em;
     }
   }
 
@@ -207,6 +206,20 @@
     }
   }
 
+  .exhibitionShowMain1-button {
+    width: 100%;
+
+    &_button {
+      font-size: 0.9em;
+    }
+
+    &_yetButton {
+      font-size: 0.9em;
+    }
+  }
+}
+// show混雑度ボタン領域
+@media screen and (min-width: 451px) and (max-width: 767px) {
   .exhibitionShowMain1-button {
     width: 60%;
   }
