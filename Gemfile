@@ -89,3 +89,6 @@ group :production do
 end
 
 gem 'fog-aws'
+
+# batch processing
+gem 'whenever', :require => false
