@@ -92,3 +92,6 @@ gem 'fog-aws'
 
 # batch processing
 gem 'whenever', :require => false
+
+# localize
+gem 'devise-i18n'
