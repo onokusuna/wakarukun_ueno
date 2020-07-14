@@ -11,13 +11,18 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-  	if @user.update(user_params)
-      flash[:success] = "登録情報が変更されました。"
-  	  redirect_to user_path(current_user)
-  	else
-      flash[:danger] = "登録情報の変更に失敗しました。"
-  	  render "edit"
-  	end
+    begin
+    	if @user.update(user_params)
+        flash[:success] = "登録情報が変更されました。"
+    	  redirect_to user_path(current_user)
+    	else
+        flash[:danger] = "登録情報の変更に失敗しました。"
+    	  render "edit"
+    	end
+    rescue => e
+      flash[:danger] = "エラー"
+      redirect_to root_path
+    end
   end
 
   def active_leave
