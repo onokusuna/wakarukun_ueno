@@ -19,7 +19,4 @@ Rails.application.routes.draw do
     resource :congestions, only: [:create]
     resource :clips, only: [:create, :destroy]
   end
-  # 存在しないパスをオプションでcontrollerをapplication,アクションをrender_404に指定
-  # 一番下に書かないと他のパスも404になる？
-  get '*path', controller: 'application', action: 'render_404'
 end

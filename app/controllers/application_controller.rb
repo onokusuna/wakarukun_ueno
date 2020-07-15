@@ -3,9 +3,8 @@ class ApplicationController < ActionController::Base
 
   # アプリケーション全体でエラーを拾う
   # StandardError=通常のプログラムで発生する可能性の高い例外クラス ex)ArgumentError NameError NoMethodError etc.
-  rescue_from StandardError, with: :render_500 #unless Rails.env.development?
-    rescue_from NoMemoryError, ScriptError, Interrupt, SecurityError, SignalException, SystemExit, SystemStackError, with: :only_logging unless Rails.env.development?
-    rescue_from ActiveRecord::RecordNotFound, ActionController::RoutingError,with: :render_404 #unless Rails.env.development?
+    rescue_from ActiveRecord::RecordNotFound, with: :render_404
+    rescue_from StandardError, with: :render_500
 
     # 存在しないページへのアクセス時 eはエラー内容を格納する引数？
     def render_404
